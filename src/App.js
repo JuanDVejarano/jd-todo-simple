@@ -3,6 +3,7 @@ import { TodoItem } from './componets/TodoItem/TodoItem';
 import { TodoSearch } from './componets/TodoSearch/TodoSearch';
 import { TodoList } from './componets/TodoList/TodoList';
 import { CreateTodoButton } from './componets/CreateTodoButton/CreateTodoButton';
+import { TodoHeader } from './componets/header/TodoHeader';
 import './App.scss';
 import React from 'react';
 
@@ -18,16 +19,19 @@ function App() {
     return (
         <React.Fragment>
 
-            <h1>Hola Mundo</h1>
-            <TodoCounter completed={5} total={10}/>
-        
-            <TodoList>
-                {defaultTodo.map(todo => (
-                    <TodoItem key={todo.key} tarea={todo.tetx} status={todo.completed}/>
-                ))}
-            </TodoList>
+            <TodoHeader></TodoHeader>
 
-            <CreateTodoButton/>
+            <main>
+                <TodoCounter completed={5} total={10}/>
+            
+                <TodoList>
+                    {defaultTodo.map(todo => (
+                        <TodoItem key={todo.key} tarea={todo.tetx} status={todo.completed}/>
+                    ))}
+                </TodoList>
+
+                <CreateTodoButton/>
+            </main>
         </React.Fragment>
     );
 }
