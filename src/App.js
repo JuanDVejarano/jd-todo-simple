@@ -21,7 +21,7 @@ function App() {
 
             <TodoHeader></TodoHeader>
 
-            <main>
+            <main className='contentMain'>
                 <TodoCounter completed={5} total={10}/>
             
                 <TodoList>
