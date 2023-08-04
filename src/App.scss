@@ -1,25 +1,9 @@
-@font-face {
-    font-family: 'inter';
-    src: url(./fonts/Inter/static/Inter-Regular.ttf);
-    font-weight: normal;
-    font-style: normal;
-}
+@import "./scss/variables.scss";
+@import "./scss/font.scss";
+@import "./scss/function.scss";
+@import "./scss/mixing.scss";
+@import "./scss/reset.scss";
+@import "./scss/general.scss";
+@import "./scss/layout.scss";
 
-@font-face {
-    font-family: 'inter';
-    src: url(./fonts/Inter/static/Inter-Bold.ttf);
-    font-weight: bold;
-    font-style: bold;
-}
-
-@font-face {
-    font-family: 'inter';
-    src: url(./fonts/Inter/static/Inter-Black.ttf);
-    font-weight: 900;
-    font-style: 900;
-}
-
-.contentMain{
-    max-width: 750px;
-    margin: auto;
-}
+@import "./componets/TodoCounter/TodoCounter.scss";
