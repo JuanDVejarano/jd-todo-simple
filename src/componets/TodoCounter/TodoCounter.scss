@@ -2,25 +2,31 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
+
   &__text {
     font-size: 14px;
     font-weight: bold;
+
     %spanNumber {
       padding: 2px 8px;
       background-color: #333333;
       border-radius: 100px;
       margin-left: 8px;
     }
+
     &--left {
       @extend .containerCount__text;
       color: #4ea8de;
+
       span {
         @extend %spanNumber;
       }
     }
+
     &--right {
       @extend .containerCount__text;
       color: #8284fa;
+
       span {
         @extend %spanNumber;
       }

@@ -3,9 +3,9 @@ import plus from "../../assets/plus.svg";
 function CreateTodoButton() {
   return (
     <div>
-      <button className="Button" type="sumit">
+      <button className="button" type="sumit">
         <p>Crear</p>
-        <img className="PlusImg" src={plus} alt="plus" />
+        <img className="plusImg" src={plus} alt="plus" />
       </button>
     </div>
   );
