@@ -1,9 +1,7 @@
-function TodoList(props){
-    return(
-        <ul>
-            {props.children}
-        </ul>
-    );
+import "./TodoList.scss";
+
+function TodoList(props) {
+  return <ul className="contentTodo">{props.children}</ul>;
 }
 
-export { TodoList }
+export { TodoList };
