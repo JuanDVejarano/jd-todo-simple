@@ -1,5 +1,5 @@
 import "./TodoItem.scss";
-import trash from "../../assets/hover=false.svg";
+import { IconLibrary } from "../../assets/IconLibrary/IconLibrary";
 function TodoItem(props) {
   return (
     <li
@@ -16,7 +16,8 @@ function TodoItem(props) {
         className="containerTodoItem__deleteButton"
         onClick={props.onDelete}
       >
-        <img src={trash} alt="eliminar" />
+        <IconLibrary type={"iconDelete"} />
+        {/*<img src={trash} alt="eliminar" />*/}
       </button>
     </li>
   );

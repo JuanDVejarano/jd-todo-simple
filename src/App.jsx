@@ -2,7 +2,7 @@ import { TodoCounter } from "./componets/TodoCounter/TodoCounter";
 import { TodoItem } from "./componets/TodoItem/TodoItem";
 import { TodoList } from "./componets/TodoList/TodoList";
 import { CreateTodoButton } from "./componets/CreateTodoButton/CreateTodoButton";
-import { TodoHeader } from "./componets/header/TodoHeader";
+import { TodoHeader } from "./componets/Header/TodoHeader";
 import { TodoSearch } from "./componets/TodoSearch/TodoSearch";
 import { TodoCreate } from "./componets/TodoCreate/TodoCreate";
 import "./App.scss";

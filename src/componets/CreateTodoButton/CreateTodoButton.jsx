@@ -1,11 +1,13 @@
 import "./CreateTodoButton.scss";
-import plus from "../../assets/plus.svg";
+import { IconLibrary } from "../../assets/IconLibrary/IconLibrary";
 function CreateTodoButton() {
   return (
     <div>
       <button className="button" type="sumit">
         <p>Crear</p>
-        <img className="plusImg" src={plus} alt="plus" />
+        <div className="plusImg">
+          <IconLibrary type={"iconPlus"} />
+        </div>
       </button>
     </div>
   );
