@@ -9,17 +9,20 @@ import "./App.scss";
 import React, { useState } from "react";
 
 const defaultTodo = [
-  { text: "tarea 1", completed: false },
-  { text: "tarea 2", completed: true },
-  { text: "tarea 3", completed: false },
-  { text: "tarea 4", completed: true },
-  { text: "tarea 5", completed: true },
-  { text: "tarea 6", completed: false },
-  { text: "tarea 7", completed: false },
-  { text: "tarea 8", completed: true },
+  { text: "Hacer ejercicio", completed: false },
+  { text: "Comer sano", completed: true },
+  { text: "Terminar curso de react", completed: false },
+  { text: "Hacer un curso de angular", completed: true },
+  { text: "Hacer la pagina de regalos", completed: true },
+  { text: "Hacer pa pagina de Jaime", completed: false },
+  { text: "Comprara los ingredientes del sushi", completed: true },
+  { text: "Hacer sushi", completed: false },
 ];
 
 function App() {
+  //#region variables, estados y funciones
+
+  //#region estados
   const [searchValue, setSearchValue] = React.useState(""); //Estado para capturar lo que se escribe en el input de busqueda
   const [listTodo, setListTodo] = React.useState(defaultTodo);
   //console.log(searchValue);
@@ -27,10 +30,25 @@ function App() {
   const totalTodos = listTodo.length; //Estado deribadon total de tareas
   const completeTodos = listTodo.filter((todo) => !!todo.completed).length; // estado deribado tareas terminadas
   const serchedTodos = listTodo.filter((serchedTodo) => {
-    return serchedTodo.text.includes(searchValue);
-  });
-  console.log(serchedTodos);
+    return serchedTodo.text.toLowerCase().includes(searchValue.toLowerCase());
+  }); //Estado deribado para filtrar las tareas
+  //console.log(serchedTodos);
   //console.log(completeTodos);
+  //#endregion
+
+  //#region fucnion completado
+  const fcompleteTodo = (text) => {
+    // metodo completar tareas
+    const newTodos = [...listTodo]; // se crea una copia del arreglo
+    const todoIndex = newTodos.findIndex((todo) => todo.text == text); // se identifica el item de la lista
+    newTodos[todoIndex].completed
+      ? (newTodos[todoIndex].completed = false)
+      : (newTodos[todoIndex].completed = true); // cambiar de estado de completo(true) a incompleto(flase) en el estado de la tarea
+    setListTodo(newTodos); // se actualiza el estado de la lista con la nueva lista
+  };
+  //#endregion
+
+  //#endregion
 
   return (
     <React.Fragment>
@@ -50,6 +68,7 @@ function App() {
               key={todos.text}
               tarea={todos.text}
               status={todos.completed}
+              onComplete={() => fcompleteTodo(todos.text)}
             />
           ))}
         </TodoList>
