@@ -37,7 +37,7 @@ function App() {
   //#endregion
 
   //#region fucnion completado
-  const fcompleteTodo = (text) => {
+  const fCompleteTodo = (text) => {
     // metodo completar tareas
     const newTodos = [...listTodo]; // se crea una copia del arreglo
     const todoIndex = newTodos.findIndex((todo) => todo.text == text); // se identifica el item de la lista
@@ -48,8 +48,18 @@ function App() {
   };
   //#endregion
 
+  //#region funcion deleteTask
+  const fDeleteTodo = (text) => {
+    const newListTodo = [...listTodo];
+    const todoIndex = newListTodo.findIndex((todo) => (todo.text = text));
+    newListTodo.splice(todoIndex, 1);
+    setListTodo(newListTodo);
+  };
   //#endregion
 
+  //#endregion
+
+  //#region componente
   return (
     <React.Fragment>
       <TodoHeader></TodoHeader>
@@ -68,13 +78,15 @@ function App() {
               key={todos.text}
               tarea={todos.text}
               status={todos.completed}
-              onComplete={() => fcompleteTodo(todos.text)}
+              onComplete={() => fCompleteTodo(todos.text)}
+              onDelete={() => fDeleteTodo(todos.text)}
             />
           ))}
         </TodoList>
       </main>
     </React.Fragment>
   );
+  //#endregion
 }
 
 export default App;
