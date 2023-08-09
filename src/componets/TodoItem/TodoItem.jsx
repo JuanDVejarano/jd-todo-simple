@@ -12,12 +12,11 @@ function TodoItem(props) {
         className="containerTodoItem__mark"
       ></button>
       <p className="containerTodoItem__text">{props.tarea}</p>
-      <button onClick={props.onDelete}>
-        <img
-          className="containerTodoItem__deleteButton"
-          src={trash}
-          alt="eliminar"
-        />
+      <button
+        className="containerTodoItem__deleteButton"
+        onClick={props.onDelete}
+      >
+        <img src={trash} alt="eliminar" />
       </button>
     </li>
   );

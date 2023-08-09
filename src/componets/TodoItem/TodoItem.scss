@@ -40,14 +40,12 @@
     position: absolute;
     right: 16px;
     cursor: pointer;
-    color: #5e60ce;
+    border: 0px;
+    border-radius: 5px;
 
-    // &:hover {
-    //   &::before,
-    //   &::after {
-    //     color: #5e60ce;
-    //   }
-    // }
+    &:hover {
+      border: #4a261f 1px solid;
+    }
   }
 
   &--active {
