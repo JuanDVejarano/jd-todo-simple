@@ -6,7 +6,7 @@ function CreateTodoButton() {
       <button className="button" type="sumit">
         <p>Crear</p>
         <div className="plusImg">
-          <IconLibrary type={"iconPlus"} />
+          <IconLibrary type={"iconPlus"} color={"white"} />
         </div>
       </button>
     </div>

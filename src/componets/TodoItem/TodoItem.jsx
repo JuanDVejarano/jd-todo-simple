@@ -16,7 +16,11 @@ function TodoItem(props) {
         className="containerTodoItem__deleteButton"
         onClick={props.onDelete}
       >
-        <IconLibrary type={"iconDelete"} />
+        <IconLibrary
+          type={"iconDelete"}
+          classSCss={"hoverRed"}
+          color={"#808080"}
+        />
         {/*<img src={trash} alt="eliminar" />*/}
       </button>
     </li>
