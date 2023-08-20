@@ -22,9 +22,27 @@ const defaultTodo = [
 function App() {
   //#region variables, estados y funciones
 
+  //#region creacion localStorage
+
+  var localStorageTodo = localStorage.getItem("TODO_JD");
+  if (
+    localStorageTodo == null ||
+    localStorageTodo == "" ||
+    localStorageTodo == undefined
+  ) {
+    let stringTodo = JSON.stringify(defaultTodo);
+    localStorage.setItem("TODO_JD", stringTodo);
+  }
+
+  //localStorage.removeItem("TODO_JD");
+
+  let parsedTodos = JSON.parse(localStorageTodo);
+
+  //#endregion
+
   //#region estados
   const [searchValue, setSearchValue] = React.useState(""); //Estado para capturar lo que se escribe en el input de busqueda
-  const [listTodo, setListTodo] = React.useState(defaultTodo);
+  const [listTodo, setListTodo] = React.useState(parsedTodos);
   //console.log(searchValue);
 
   const totalTodos = listTodo.length; //Estado deribadon total de tareas
