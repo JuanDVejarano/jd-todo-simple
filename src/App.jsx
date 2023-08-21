@@ -23,7 +23,6 @@ function App() {
   //#region variables, estados y funciones
 
   //#region creacion localStorage
-
   var localStorageTodo = localStorage.getItem("TODO_JD");
   if (
     localStorageTodo == null ||
@@ -41,6 +40,7 @@ function App() {
   //#endregion
 
   //#region estados
+
   const [searchValue, setSearchValue] = React.useState(""); //Estado para capturar lo que se escribe en el input de busqueda
   const [listTodo, setListTodo] = React.useState(parsedTodos);
   //console.log(searchValue);
@@ -50,8 +50,7 @@ function App() {
   const serchedTodos = listTodo.filter((serchedTodo) => {
     return serchedTodo.text.toLowerCase().includes(searchValue.toLowerCase());
   }); //Estado deribado para filtrar las tareas
-  //console.log(serchedTodos);
-  //console.log(completeTodos);
+
   //#endregion
 
   //#region fucnion completado
@@ -62,7 +61,7 @@ function App() {
     newTodos[todoIndex].completed
       ? (newTodos[todoIndex].completed = false)
       : (newTodos[todoIndex].completed = true); // cambiar de estado de completo(true) a incompleto(flase) en el estado de la tarea
-    setListTodo(newTodos); // se actualiza el estado de la lista con la nueva lista
+    updateTodo(newTodos); // se actualiza el estado de la lista con la nueva lista
   };
   //#endregion
 
@@ -71,10 +70,17 @@ function App() {
     const newListTodo = [...listTodo];
     const todoIndex = newListTodo.findIndex((todo) => (todo.text = text));
     newListTodo.splice(todoIndex, 1);
-    setListTodo(newListTodo);
+    updateTodo(newListTodo);
   };
   //#endregion
 
+  //#region actualizar localStorage
+  const updateTodo = (newTodos) => {
+    let stringTodo = JSON.stringify(newTodos);
+    setListTodo(newTodos);
+    localStorage.setItem("TODO_JD", stringTodo);
+  };
+  //#endregion
   //#endregion
 
   //#region componente
