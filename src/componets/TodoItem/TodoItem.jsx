@@ -1,21 +1,28 @@
 import "./TodoItem.scss";
-import trash from "../../assets/hover=false.svg";
-function TodoItem({ tarea, status, onComplete, onDelete }) {
+import { IconLibrary } from "../../assets/IconLibrary/IconLibrary";
+function TodoItem(props) {
   return (
     <li
       className={`${
-        status ? "containerTodoItem--active" : "containerTodoItem"
+        !!props.status ? "containerTodoItem--active" : "containerTodoItem"
       }`}
     >
-      <div className="containerTodoItem__mark" onClick={onComplete}></div>
-      <p className="containerTodoItem__text">{tarea}</p>
-      <p className="containerTodoItem__text">{status}</p>
-      <img
+      <button
+        onClick={props.onComplete}
+        className="containerTodoItem__mark"
+      ></button>
+      <p className="containerTodoItem__text">{props.tarea}</p>
+      <button
         className="containerTodoItem__deleteButton"
-        src={trash}
-        alt="eliminar"
-        onClick={onDelete}
-      />
+        onClick={props.onDelete}
+      >
+        <IconLibrary
+          type={"iconDelete"}
+          classSCss={"hoverRed"}
+          color={"#808080"}
+        />
+        {/*<img src={trash} alt="eliminar" />*/}
+      </button>
     </li>
   );
 }

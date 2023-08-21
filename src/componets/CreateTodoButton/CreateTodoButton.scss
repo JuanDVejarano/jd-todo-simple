@@ -1,17 +1,28 @@
-.Button {
+.button {
   display: flex;
   justify-content: space-between;
   background-color: #1e6f9f;
   border: none;
-  width: 5rem;
+  width: 80px;
   border-radius: 5px;
-  padding: 0.75rem 0.75rem;
+  padding: 11px;
   color: white;
   font-size: 14px;
   align-items: center;
   cursor: pointer;
-  .PlusImg {
-    width: 14px;
-    height: auto;
+
+  &:hover {
+
+    //width: 86px;
+    //padding: 13px;
+    .plusImg {
+      transform: rotate(90deg);
+    }
+  }
+
+  .plusImg {
+    width: 16px;
+    height: 16px;
+    transition: all 0.3s ease;
   }
 }

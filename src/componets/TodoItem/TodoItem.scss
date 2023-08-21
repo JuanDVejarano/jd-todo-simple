@@ -11,6 +11,10 @@
   border-radius: 5px;
   align-items: center;
 
+  &__text {
+    font-family: "inter";
+  }
+
   &__mark {
     display: flex;
     margin-right: 12px;
@@ -31,21 +35,18 @@
       top: 3px;
     }
   }
+
   &__deleteButton {
     position: absolute;
     right: 16px;
     cursor: pointer;
-    color: #5e60ce;
-
-    // &:hover {
-    //   &::before,
-    //   &::after {
-    //     color: #5e60ce;
-    //   }
-    // }
+    border: 0px;
+    border-radius: 5px;
   }
+
   &--active {
     @extend .containerTodoItem;
+
     .containerTodoItem {
       &__mark {
         background-color: #5e60ce;
@@ -55,10 +56,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
         &::before {
           content: "";
         }
       }
+
       &__text {
         text-decoration: line-through;
         color: #808080;
