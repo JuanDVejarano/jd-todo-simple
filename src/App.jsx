@@ -87,7 +87,6 @@ function App() {
   return (
     <React.Fragment>
       <TodoHeader></TodoHeader>
-
       <main className="contentMain">
         <div className="todoSearchContainer">
           <TodoCreate />
