@@ -1,9 +1,9 @@
 import "./CreateTodoButton.scss";
 import { IconLibrary } from "../../assets/IconLibrary/IconLibrary";
-function CreateTodoButton() {
+function CreateTodoButton(props) {
   return (
     <div>
-      <button className="button" type="sumit">
+      <button className="button" onClick={props.onCreate}>
         <p>Crear</p>
         <div className="plusImg">
           <IconLibrary type={"iconPlus"} color={"white"} />

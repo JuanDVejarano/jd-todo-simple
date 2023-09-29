@@ -42,7 +42,7 @@ function App() {
   //#region estados
 
   const [searchValue, setSearchValue] = React.useState(""); //Estado para capturar lo que se escribe en el input de busqueda
-  const [listTodo, setListTodo] = React.useState(parsedTodos);
+  const [ listTodo, setListTodo] = React.useState(parsedTodos);
   //console.log(searchValue);
 
   const totalTodos = listTodo.length; //Estado deribadon total de tareas
@@ -67,6 +67,7 @@ function App() {
 
   //#region funcion deleteTask
   const fDeleteTodo = (text) => {
+    debugger;
     const newListTodo = [...listTodo];
     const todoIndex = newListTodo.findIndex((todo) => (todo.text = text));
     newListTodo.splice(todoIndex, 1);
@@ -81,6 +82,11 @@ function App() {
     localStorage.setItem("TODO_JD", stringTodo);
   };
   //#endregion
+
+  //#region Crear todo
+  const fCreateTodo = () => {
+    console.log("Aprendiendo");
+  };
   //#endregion
 
   //#region componente
@@ -89,9 +95,9 @@ function App() {
       <TodoHeader></TodoHeader>
 
       <main className="contentMain">
-        <div className="todoSearchContainer">
+        <div className="containerCreateTodo">
           <TodoCreate />
-          <CreateTodoButton />
+          <CreateTodoButton onCreate={() => fCreateTodo()} />
         </div>
 
         <TodoCounter completed={completeTodos} total={totalTodos} />
