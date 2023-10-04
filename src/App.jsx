@@ -68,8 +68,9 @@ function App() {
 
   //#region funcion deleteTask
   const fDeleteTodo = (text) => {
+    //debugger;
     const newListTodo = [...listTodo];
-    const todoIndex = newListTodo.findIndex((todo) => (todo.text = text));
+    const todoIndex = newListTodo.findIndex((element) => element.text === text);
     newListTodo.splice(todoIndex, 1);
     updateTodo(newListTodo);
   };
@@ -84,7 +85,13 @@ function App() {
   //#endregion
 
   //#region Crear todo
-  const fCreateTodo = () => {};
+  const fCreateTodo = () => {
+    const newListTodo = [...listTodo];
+    newListTodo.push({ text: newValue, completed: false });
+    updateTodo(newListTodo);
+  };
+  //#endregion
+
   //#endregion
 
   //#region componente
